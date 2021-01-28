@@ -139,14 +139,14 @@ class Airplane {
     this.favLanguage = attr.favLanguage;
     this.catchPhrase = attr.catchPhrase;
   }
-  demo(attr){
-    this.subject = attr.subject;
-    return `Today we are learning about ${this.subject}`
+  demo(){
+    this.subject = subject;
+    return `Today we are learning about ${this.subject}`;
   }
   grade(){
-
-  }
+    return `${this.student.name} received a perfect score on ${this.subject}`
  }
+}
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
@@ -162,8 +162,26 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Lambdasian{
+   constructor(attr){
+     super(attr);
+     this.previousBackground = attr.previousBackground;
+     this.className = attr.className;
+     this.favSubjects = attr.favSubjects;
+   }
+   listSubjects(){
+     this.subject1 = subject1;
+     this.subject2 = subject2;
+     this.subject3 = subject3;
+    return `Loving ${this.subject1}, ${this.subject2}, ${this.subject3}`
+   }
+   PRAssignment(){
+
+   }
+   sprintChallenge(){
+
+   }
+
  }
   
   /*
