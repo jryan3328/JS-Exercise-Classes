@@ -143,12 +143,15 @@ class Airplane {
     this.favLanguage = attr.favLanguage;
     this.catchPhrase = attr.catchPhrase;
   }
-  demo(){
+  demo(subject){
     this.subject = subject;
     return `Today we are learning about ${this.subject}`;
   }
-  grade(){
-    return `${this.student.name} received a perfect score on ${this.subject}`
+  grade(student, subject){
+    this.student = student;
+    this.subject = subject;
+    
+    return `${this.student} received a perfect score on ${this.subject}`;
  }
 }
   /*
@@ -174,16 +177,15 @@ class Airplane {
      this.favSubjects = attr.favSubjects;
    }
    listSubjects(){
-     this.subject1 = subject1;
-     this.subject2 = subject2;
-     this.subject3 = subject3;
-    return `Loving ${this.subject1}, ${this.subject2}, ${this.subject3}`
+     
+    return `Loving ${this.Student.favSubjects}, ${this.Student.favSubjects}, ${this.Student.favSubjects}`;
    }
-   PRAssignment(){
-
+   PRAssignment(subject){
+    this.subject = subject;
+    return `${this.Student.name} has submitted a PR for ${this.subject}`
    }
    sprintChallenge(){
-
+    return `${this.Student.name} has begun sprint challenge on ${this.subject}`
    }
 
  }
@@ -207,11 +209,14 @@ class Airplane {
       this.gradClassName = attr.gradClassName;
       this.favInstructor = attr.favInstructor;
      }
-     standUp(){
-
+     standUp(slackChannel){
+      this.slackChannel = slackChannel;
+      return `${this.name} announces to ${this.slackChannel}, @channel standy times!`
      }
-     debugsCode(){
-       
+     debugsCode(student, subject){
+       this.student = student;
+       this.subjectName = subject;
+       return `${this.name} debugs ${this.student.name}'s code on ${this.subject}`
      }
  }
   /*
