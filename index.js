@@ -86,11 +86,15 @@ class Airplane {
       this.tank = this.tank + gallons;
     }
     drive(distance){
+      if ((this.tank - distance / this.milesPerGallon) <= 0){
+        const fillUp = this.tank * this.milesPerGallon;
+        this.odometer = this.odometer + fillUp;
+        this.tank = 0;
+        return `I rat out of fuel at ${this.odometer} miles`;
+      }else {
       this.odometer = this.odometer + distance;
-      if(distance >= this.tank + gallons){
-        
-        
-        }
+      this.tank = this.tank - (distance / this.milesPerGallon);
+      }
     }
   }
   
@@ -197,8 +201,18 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor{
+     constructor(attr){
+      super(attr);
+      this.gradClassName = attr.gradClassName;
+      this.favInstructor = attr.favInstructor;
+     }
+     standUp(){
+
+     }
+     debugsCode(){
+       
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
